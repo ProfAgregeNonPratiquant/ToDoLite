@@ -1,0 +1,279 @@
+
+$background-color: rgb(252, 252, 252);
+
+
+
+.carte{
+    .carte__tache{
+        
+        display: grid;
+        grid-template-columns:100px 1fr 100px 1fr 100px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "titre   titre   titre   titre   titre"
+            "details .       annuler .       valider";
+
+        .carte__tache__titre{
+            grid-area: titre;
+            display: flex;
+            align-items: center;
+            input{
+                font-size: 1.3rem;
+                
+                font-weight: bold;
+                
+
+                
+            }
+        }
+        
+        .carte__tache__details{
+            grid-area: details;
+            justify-self: center;
+        }
+        .carte__tache__annuler{
+            grid-area: annuler;
+            justify-self: center;
+        }
+        .carte__tache__valider{
+            grid-area: valider;
+            justify-self: center;
+        }
+    }
+    
+    .carte__sousTaches{
+        overflow: hidden;
+        margin-bottom: 10px;
+        .carte__sousTaches__sousTache{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 10px;
+            padding: 10px 0px 10px 10px;
+            margin: 0px 10px 0px 25px;
+
+            border-left: solid grey;
+            input{
+                font-size: 0.9rem; 
+                margin-right: 5px;  
+            }
+            &:nth-child(1){
+                padding-top: 15px;
+            }
+            &:last-child(){
+                padding-bottom: 15px;
+            }
+            button{
+                height: 25px;
+            width: 25px;
+            align-self: flex-end;
+            padding: 0px 1px 15px 1px;
+            color: white;
+            background-color: rgb(248, 83, 83);
+            }
+        }
+        .carte__sousTaches__ajout{
+            
+            margin-left: 8px;
+            margin-right: 8px;
+            button{
+                padding-left: 5px;
+                width:100%;
+                text-align: left;
+                
+            }
+        }
+    }
+    
+
+    
+}
+
+
+/*
+$font-color:rgb(88, 88, 88);
+$font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$background-color: rgb(252, 252, 252);
+
+.liste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carte{
+    display: flex;
+    justify-content: space-between;
+
+    width:1000px;
+
+    font-family: $font-family;
+    color:$font-color; 
+    background-color: $background-color;
+
+    border: solid gray;
+    box-shadow: 0px 0px 0px 0px rgb(169, 169, 169);
+    border-radius: 10px;
+    transform: scale(1);
+
+    
+    
+
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+
+    transition: 0.3s;
+    &:hover{
+        box-shadow: 1px 1px 1px 1px rgb(169, 169, 169);
+        transform: scale(1.002);
+        background-color: white;
+    }
+
+    .tache{
+        display:block;
+        width:85%;
+        overflow: hidden;
+        
+        .titre{
+            font-size: 2.5rem;
+            padding: 0 0 0 0;
+            
+            .form-group{
+                display: flex;
+                align-items: flex-start;
+                label{
+                    border: solid $background-color;
+                    padding-bottom: 0;
+                    align-self: flex-start;
+                    width:fit-content;
+                    padding-right: 0.5rem;
+                    width:120px;
+                    
+                }
+                input{
+                    height: fit-content;
+                    font-family: $font-family;
+                    font-size: 2.5rem;
+                    color: $font-color;
+                    border: dashed gray;
+                    border-radius: 10px;
+                    background-color: white;
+                    flex-grow:1 ;
+                    padding-bottom: 0; 
+                    padding-left: 0.5rem;                  
+                }
+            }
+        }
+        .ajoutSousTaches{
+            margin-top: 25px;
+        }
+        
+        .sousTaches{
+            margin-top: 15px;
+            margin-left: 40px;
+            
+            .form-group{
+                padding-top: 15px;
+                padding-bottom: 15px;
+            
+                display: flex;
+                border-left: solid gray;
+                margin-left: 30px;
+                padding-left: 20px;
+                align-items: flex-end;
+                label{
+                    border: solid $background-color;
+                    width:fit-content;
+                    padding-right: 0.5rem;
+                    padding-bottom: 0;
+                    width:95px;
+                    
+                }
+                input{
+                    height: fit-content;
+                    font-family: $font-family;
+                    font-size: 1rem;
+                    color: $font-color;
+                    border: dashed gray;
+                    border-radius: 5px;
+                    background-color: white;
+                    flex-grow:1;
+                    padding-bottom: 0;
+                    padding-left: 0.25rem;                  
+                }
+
+            }
+            
+            
+        }
+    }
+    .controles{
+        display:flex;
+        flex-direction: column;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+
+    .btn{
+        border: solid gray;
+        border-radius: 5px;
+        background-color: $background-color;
+
+        font-size: 1rem;
+        font-family: inherit;
+        color: inherit;
+
+        cursor: pointer;
+
+        width:120px;
+
+        transition:1s;
+        
+
+        padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        &.btn__ajoutSousTaches{
+            margin-left: 35px;
+            &:hover{
+                background-color: rgb(255, 192, 19);
+            }
+        }
+        &.btn__controles{
+            margin: 0.25em 0.25em;
+            &.btn__controles__annuler:hover{
+                background-color: rgb(248, 83, 83);
+            }
+            &.btn__controles__valider:hover{
+                background-color:rgb(55, 206, 55);
+            }
+        }
+        &.btn__sousTaches{
+            margin-left: 35px;
+            &:hover{
+                background-color: rgb(255, 192, 19);
+            }
+            &.btn__sousTaches__supprimer{
+                height: 25px;
+                width: 25px;
+                align-self: flex-end;
+                padding: 0px 1px 15px 1px;
+
+                color: white;
+                background-color: rgb(248, 83, 83);
+            }
+            &.btn__ajouter__sousTache{
+                padding-top: 7px;
+                padding-bottom: 7px;
+                width:100%;
+                justify-self: flex-start;
+                margin-left: 0;
+                text-align: left;
+                padding-left: 15px;
+
+            }
+        }
+    }
+}
+*/
+
+
+
+

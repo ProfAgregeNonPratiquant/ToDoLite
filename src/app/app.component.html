@@ -1,0 +1,8 @@
+<header>
+    <app-header></app-header>
+</header>
+
+
+<div [@slide]=prepareRoute(outlet)>
+    <router-outlet class="router" #outlet=outlet></router-outlet>
+</div>

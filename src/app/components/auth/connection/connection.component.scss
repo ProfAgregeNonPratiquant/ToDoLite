@@ -1,0 +1,56 @@
+$background-color: rgb(252, 252, 252);
+
+:host{
+    width: 100%;
+}
+
+.carte{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    h1{
+        padding-left: 3px;
+    }
+    .control{
+        display: flex;
+        align-items: center;
+        margin: 20px 10px 20px 10px;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-between;
+        button{
+            
+            width:90px;
+            padding: 3px 5px 3px 5px;
+            margin-right: 9px;
+            margin-left: 9px;
+            margin-bottom: 8px;
+        
+            background-color: $background-color;
+            
+         
+        
+            cursor: pointer;
+        
+            border:solid grey;
+            border-radius: 5px;
+    
+            transition: 0.3s;
+            &:hover{
+                border:solid ;
+                color: black;
+                background-color: rgb(255, 192, 19);
+            }
+        }
+    }
+}
+
+
+        
+        
+    
+    
+        
+    
+

@@ -1,0 +1,17 @@
+<div class="nav">
+    <div>
+        <a *ngIf="!isAuth" routerLinkActive="active" routerLink="accueil">
+            Accueil
+        </a>
+        <a *ngIf="isAuth" routerLinkActive="active" routerLink="home">
+            Vue d'ensemble
+        </a>
+        <a *ngIf="isAuth" routerLinkActive="active" routerLink="taches">
+            Taches
+        </a>
+    </div>
+
+    <div *ngIf="isAuth">
+        <a (click)="onDeconnecte()" routerLink="accueil">Se déconnecter</a>
+    </div>
+</div>

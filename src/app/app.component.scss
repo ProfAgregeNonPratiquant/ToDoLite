@@ -1,0 +1,25 @@
+
+$background-color: rgb(252, 252, 252);
+
+:host{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+header{
+    font-size: 0.9rem;
+
+    background-color: $background-color;
+    
+    border-bottom: solid gray;
+    
+    padding: 0px 4px 4px 4px;
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    position: sticky;
+    top: 0px;
+
+    overflow: hidden;
+}
+

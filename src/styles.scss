@@ -1,0 +1,73 @@
+$font-color:rgb(88, 88, 88);
+$background-color: rgb(252, 252, 252);
+$font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+*{
+    box-sizing: border-box;
+
+    font-family: $font-family;
+    color: $font-color;
+}
+
+
+
+body{
+    font-size: 16px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+a{
+    text-decoration: none;
+    padding: 0 2px 0 2px;
+    margin: 0 2px 0 2px;
+    height: 100%;
+
+    &:hover{
+        color: black;
+    }
+}
+
+.carte{
+        font-size: 1rem;
+
+        width: 100%;
+        
+        background-color: $background-color;
+    
+        border: solid gray;
+        border-radius: 7px;
+    
+        padding: 4px 4px 4px 4px;
+        margin-bottom: 5px;
+}
+input{
+    width:0;
+    flex-grow: 1;
+    border: dashed gray 2px;
+    border-radius: 5px;
+    margin-left: 5px; 
+    padding-left: 5px;
+    &:focus{
+        border: dashed rgb(248, 193, 13) 2px;
+    }
+}
+button{
+    width:84px;
+    padding: 2px 2px 2px 2px;
+
+    background-color: $background-color;
+    
+
+    cursor: pointer;
+
+    border:solid grey;
+    border-radius: 5px;
+    &:hover{
+        color: black;
+        border-color: solid black;
+    }
+}
+
+
+

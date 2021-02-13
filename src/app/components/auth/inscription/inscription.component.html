@@ -1,0 +1,21 @@
+<form [formGroup]="formulaireInscription" (ngSubmit)=onSoumission()>
+    <div class="form-group carte">
+        <h1>Créez un nouveau compte</h1>
+        <div class="control">
+            <label for="email">Adresse mail : </label>
+            <input class="form-control" type="email" id="email" formControlName="email" autofocus>
+        </div>
+        <div class="control">
+            <label for="motDePasse">Mot de passe : </label>
+            <input class="form-control" type="password" id="motDePasse" formControlName="motDePasse">
+        </div>
+        <div class="btn">
+            <button type="button" (click)=onRetour()  >Retour</button> 
+            <button type="submit" [disabled]="formulaireInscription.invalid">S'inscrire</button> 
+        </div> 
+
+    </div>
+    <div *ngIf=error >
+        {{error}}
+    </div>
+</form>

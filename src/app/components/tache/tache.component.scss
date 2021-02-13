@@ -1,0 +1,93 @@
+$background-color: rgb(252, 252, 252);
+$list-color: rgb(255, 192, 19);
+
+:host{
+    display: block;
+}
+h2{
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: "checkbox";
+    border-radius: 0;
+}
+
+
+.carte{
+    font-size: 1rem;
+    
+    background-color: $background-color;
+
+    border: solid gray;
+    border-radius: 7px;
+
+    padding: 4px 4px 4px 4px;
+    margin-bottom: 5px;
+    .carte_progression{
+        background-color: $background-color;
+        border:solid gray 2px;
+        border-radius: 3px ;
+        height: 15px;
+        overflow: hidden ;
+
+        display: flex;
+
+        .carte_progression_progress{
+            height: 15px;
+            width:calc(12px + 100%);
+            background-color: $list-color;
+
+            flex-shrink: 0;
+            transform-origin: left top;
+        }
+    }
+    .carte__tache{
+        display: grid;
+        grid-template-columns:100px 1fr 100px 1fr 100px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "titre   titre   titre   titre   check"
+            "details .       edition .       suppression";
+        .carte__tache__titre{
+            grid-area: titre;
+        }
+        .carte__tache__check{
+            grid-area: check;
+            align-self: center;
+            justify-self: flex-end;
+        }
+        .carte__tache__details{
+            grid-area: details;
+            justify-self: center;
+        }
+        .carte__tache__edition{
+            grid-area: edition;
+            justify-self: center;
+        }
+        .carte__tache__suppression{
+            grid-area: suppression;
+            justify-self: center;
+        }
+    }
+    .carte__sousTaches{
+        overflow: hidden;
+        margin-bottom: 10px;
+        .carte__sousTaches__sousTache{
+            display: flex;
+            justify-content: space-between;
+            align-content: flex-end;
+            margin-left: 10px;
+            padding: 10px 0px 10px 10px;
+            margin: 0px 10px 0px 25px;
+            border-left: solid grey;
+            &:nth-child(1){
+                padding-top: 15px;
+            }
+            &:last-child(){
+                padding-bottom: 15px;
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<form [formGroup]="tacheForm" (ngSubmit)="onSubmitForm()">
+    <div class="carte">
+        <div class="carte__tache">
+            <div class="carte__tache__titre form-group">
+                <label for="tache">
+                    <h2>Tache : </h2>
+                </label>
+                <input id="titre" class="form-control" type="text" formControlName="tache" autofocus>
+            </div>
+
+            <div class="carte__tache__details">
+                <button type="button" (click)="nouveauSousTacheControl()">Sous tâches</button>
+            </div>
+
+            <div class="carte__tache__annuler">
+                <button type="button" (click)=onAnnuler()>Annuler</button>
+            </div>
+
+            <div class="carte__tache__valider">
+                <button type="submit" [disabled]="tacheForm.invalid">Valider</button>
+            </div>
+
+        </div>
+        <div class="carte__sousTaches" formArrayName="sousTaches">
+            <div class="form-group carte__sousTaches__sousTache"
+                *ngFor="let sousTachesControl of getSousTaches().controls; let i=index;">
+                <label for="i">Sous-tache {{i+1}} : </label>
+                <input #input [id]="i" class="form-control" type="text" [formControlName]="i">
+                <button  type="button"
+                    (click)=onSupprimerSousTache(i)> x </button>
+            </div>
+            <div class="carte__sousTaches__ajout" *ngIf="getSousTaches().controls.length>0">
+                <button type="button" (click)=nouveauSousTacheControl() >Ajouter une sous tache</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!--
+    <form [formGroup]="tacheForm" (ngSubmit)="onSubmitForm()">
+    <div class="liste">
+        <div class="carte">
+            <div class="tache" style="padding-right: 2px;">
+                <div class="titre">
+                    <div class=" form-group">
+                        <label for="tache">Tache : </label>
+                        <input class="form-control" type="text" formControlName="tache" autofocus>
+                    </div>
+                </div>
+                <div class="ajoutSousTaches">
+                    <button class='btn btn__sousTaches' type="button" (click)=onDetails()>
+                        Sous-tâches</button>
+                </div>
+                <div formArrayName="sousTaches" class="sousTaches" [@openclose]="details ? 'open' : 'close'">
+                    <div class="form-group" *ngFor="let sousTachesControl of getSousTaches().controls; let i=index">
+                        <label for="sousTaches">Sous-tache {{i+1}} : </label>
+                        <input #input [id]="i" class="form-control" type="text" [formControlName]="i">
+                        <button class="btn btn__sousTaches btn__sousTaches__supprimer" type="button"
+                            (click)=onSupprimerSousTache(i)> x </button>
+                    </div>
+                    <button class="btn btn__sousTaches btn__ajouter__sousTache" type="button"
+                        (click)="nouveauSousTacheControl()" [disabled]='tacheForm.invalid'>
+                        Ajouter une nouvelle sous tâche
+                    </button>
+                </div>
+            </div>
+            <div class="controles" style="z-index: 0;">
+                <div>
+                    <button class="btn btn__controles btn__controles__annuler" (click)=onAnnuler()
+                        type="button">Annuler</button>
+                </div>
+                <div>
+                    <button class="btn btn__controles btn__controles__valider" type="submit"
+                        [disabled]='tacheForm.invalid'>Valider</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+-->

@@ -1,0 +1,13 @@
+<h2 *ngIf=user > Bienvenue {{user.email}} ! </h2>
+
+<h3 *ngIf="dernieresTaches.length > 0">Dernières tâches ajoutées</h3>
+
+    <app-tache 
+        *ngFor="let tache of dernieresTaches; let j = index"
+        [tache]=tache
+        [id]=lastId[j]
+    ></app-tache>
+
+<h3 *ngIf="!(dernieresTaches.length > 0)">Pour commencer, <a routerLink="/nouvelleTache">ajoutez</a> une nouvelle tâche.</h3>
+    
+
